@@ -7,3 +7,8 @@ testMyLast2 = myLast ['x','y','z'] == 'z'
 myButLast = last . init
 testButMyLast1 = myButLast [1,2,3,4] == 3
 testButMyLast2 = myButLast ['a'..'z'] == 'y'
+
+-- 3
+elementAt xs x = last . fst $ splitAt x xs
+testElementAt1 = elementAt [1,2,3] 2 == 2
+testElementAt2 = elementAt "haskell" 5 == 'e'
