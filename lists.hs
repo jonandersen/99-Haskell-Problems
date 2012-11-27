@@ -13,9 +13,16 @@ elementAt xs x = last . fst $ splitAt x xs
 testElementAt1 = elementAt [1,2,3] 2 == 2
 testElementAt2 = elementAt "haskell" 5 == 'e'
 
---4
+-- 4
 myLength [] = 0
 myLength (x:xs) = 1 + myLength xs
 testMyLength1 = myLength [123, 456, 789] == 3
 testMyLength2 = myLength "Hello, world!" == 13
+
+-- 5
+myReverse [] = []
+myReverse (x:xs) = myReverse xs ++ [x]
+
+testMyReverse1 = myReverse "A man, a plan, a canal, panama!" == "!amanap ,lanac a ,nalp a ,nam A"
+testMyReverse2 = myReverse [1,2,3,4] == [4,3,2,1]
 
